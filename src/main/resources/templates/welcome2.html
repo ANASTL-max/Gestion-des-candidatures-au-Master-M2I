@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+ <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta charset="ISO-8859-1">
+<meta charset="ISO-8859-1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Recu</title>
+</head>
+
+<body>
+
+   <div class="container mt-5">   </center>
+<div class="card" style="width: 25rem;">
+ <div class="card-header text-center bg-info ">
+  <h3>Reçu</h3>
+  </div>
+  <div class="card-body">  
+  
+  
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nom:</label>
+    <span th:text="${student.nom}"></span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Prenom:</label>
+    <span th:text="${student.prenom}"></span>
+  </div>
+ <div class="form-group">  
+    <label for="exampleInputEmail1">CIN:</label>
+    <span th:text="${student.cin}"></span>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Nationalite :</label>
+    <span th:text="${student.nationalite}"></span>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Date de naissance :</label>
+    <span th:text="${student.date_naiss}"></span>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Adresse:</label>
+    <span th:text="${student.adresse}"></span>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Telephone:</label>
+    <span th:text="${student.telephone}"></span>
+  </div>
+  
+     <div class="form-group">
+    <label for="exampleInputPassword1">Email:</label>
+    <span th:text="${student.Email}"></span>
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">Situation Professionnelle:</label>
+    <span th:text="${student.situation}"></span>
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Année d'obtention du baccalauréat:</label>
+    <span th:text="${student.ann_etud_bac}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Filiere de licence:</label>
+    <span th:text="${student.filiere}"></span>
+  </div>
+
+     <div class="form-group">
+    <label for="exampleInputPassword1">Université du diplôme obtenue:</label>
+    <span th:text="${student.universite}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Faculte :</label>
+    <span th:text="${student.faculte}"></span>
+  </div>
+  
+      <div class="form-group">
+    <label for="exampleInputPassword1">Année de la première inscription à l'université :</label>
+    <span th:text="${student.date_univ}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Note de S1:</label>
+    <span th:text="${student.note1}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S1:</label>
+    <span th:text="${student.s1session}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Note de S2:</label>
+    <span th:text="${student.note2}"></span>
+    
+     <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S2:</label>
+    <span th:text="${student.s2session}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Note de S3:</label>
+    <span th:text="${student.note3}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S3:</label>
+    <span th:text="${student.s3session}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Note de S4:</label>
+    <span th:text="${student.note4}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S4:</label>
+    <span th:text="${student.s4session}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Note de S5:</label>
+    <span th:text="${student.note5}"></span>
+  </div>
+     <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S5:</label>
+    <span th:text="${student.s5session}"></span>
+  </div>
+  
+    <div class="form-group">
+    <label for="exampleInputPassword1">Note de S6 :</label>
+    <span th:text="${student.note6}"></span>
+  </div>
+  
+   <div class="form-group">
+    <label for="exampleInputPassword1">Session d'obtention de S6:</label>
+    <span th:text="${student.s6session}"></span>
+  </div>
+    <div class="form-group">
+    <label for="exampleInputPassword1">Année d'obtention de la Licence:</label>
+    <span th:text="${student.date_licence}"></span>
+  </div>
+    
+  
+  
+  
+   <div class="form-group">
+          
+            </div>
+        </div>
+      
+
+  </div>
+</div>
+</div>
+
+<script type="text/javascript">
+//Data Picker Initialization
+$('.datepicker').datepicker();
+</script>
+</body>
+</html>

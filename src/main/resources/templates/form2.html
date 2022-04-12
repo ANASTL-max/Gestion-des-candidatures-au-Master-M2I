@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta charset="ISO-8859-1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+<title>Inscription M2I-FSO 2021-2022</title>
+</head>
+<body>
+<div class="container">
+
+    <header class="jumbotron">
+    
+    </header>
+
+     <div class="head-div" >
+         <center><h1> Inscription M2I-FSO <br> 2021-2022 </h1></center> 
+          <span> Fiche de pré-inscription </span><br>
+          <p class="" >Les candidats sont responsables des données saisies (aucune vérification ne sera faite
+                       par la commission du Master) 
+          </p>
+          <p class="">  <span>NB : </span>
+              Au moment de l'inscription, les originaux des attestations et des relevés des notes
+              seront demandés aux candidats pour vérifier la validité des données saisies. Toute
+              donnée erronée impliquera le rejet du dossier.
+          </p>   
+
+          <span >  * Obligatoire </span>
+          	<div>
+		
+	</div>
+  </div>  
+
+    <div class="form-principale" >
+        <form th:action="@{/affiche}" method="post" th:object="${student}" >
+       
+
+          <label for="cin" class="label-titre">CIN ou Numero de Passeport :<span>*</span>  </label>
+          <input type="text" placeholder="CIN" id="cin" name="cin"  required th:field="*{cin}"  />
+          
+             <label for="nom" class="label-titre" >Nom : <span>*</span></label>
+          <input type="text"  placeholder="nom" id="nom" name="nom" required th:field="*{nom}" />
+
+          <label for="prenom" class="label-titre">Prenom :<span>*</span> </label>
+          <input type="text" placeholder="Prenom" id="prenom" name="prenom"  required th:field="*{prenom}"/>
+          
+         <label class="label-titre">Nationalite <span>*</span> :  </label>
+          <label class="une-seule-rep">une seule reponse est Possible </label>
+
+         <label for="Nationalite"> <input type="radio" name="nationalite" id="Nationalite" class="radio" value="Maroccain" required th:field="*{nationalite}"> Marocaine </label>
+        <label for="autre-nation"> <input type="radio" name="nationalite" id="autre-nation" class="radio" value="Autre"   th:field="*{nationalite}"/> Autre : </label>
+          <input type="text" placeholder="Autre" id="autre-champ" />
+
+
+          <label for="date" class="label-titre">Date de Naissance  :<span>*</span> </label>
+          <input type="date" placeholder="Exemple : 24/01/2022 " id="date_naiss" name="date_naiss" required th:field="*{date_naiss}" />
+
+           <label for="Adresse" class="label-titre" >Adresse :<span>*</span> </label>
+          <textarea class="textarea" placeholder="Adresse" id="adresse" name="adresse"  rows="5" cols="50" required th:field="*{adresse}"> </textarea>
+
+          <label for="tele" class="label-titre">Telephone  :<span>*</span> </label>
+          <input type="tel" placeholder="Telephone" id="telephone" name="telephone" required th:field="*{telephone}" />
+
+          <label for="email" class="label-titre">Email  :<span>*</span> </label>
+          <input type="email" placeholder="Email" id="Email" name="Email"  required th:field="*{Email}" />
+
+          <label for="Nationalite" class="label-titre">Situation Professionnelle   <span>*</span> :  </label>
+          <label class="une-seule-rep">une seule reponse est Possible </label>
+
+         <label for="situation"> <input type="radio" name="situation" id="situation" value="Salarie" class="radio" required th:field="*{situation}"/> Salarie <br></label>
+        <label for="situation-non" ><input type="radio" name="situation" id="situation-non"  value="Non Salarie" class="radio"  th:field="*{situation}"/> Non Salarie </label>
+         
+        <label for="date-bac" class="label-titre">Annee d'obtenation du baccalaureat :<span>*</span> </label>
+        <input type="date" placeholder="Exemple : 24/01/2022 " id="ann_etud_bac" name="nb_ann_etud" required th:field="*{ann_etud_bac}" />
+
+            <label class="label-titre">Filiere de licence  <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+    <div class="radio-div">
+            <label for="smi"> <input type="radio" name="filiere" id="smi" class="radio" value="SMI" required th:field="*{filiere}"/> SMI <br></label>
+            <label for="Dpl-etrg"> <input type="radio" name="filiere" id="Dpl-etrg" class="radio" value="Diplome Etranger"  th:field="*{filiere}"/> Diplome Etranger </label>
+            <label for="autre-diplm" ><input type="radio" name="filiere" id="autre-diplm"  class="radio" value="Autre"  th:field="*{filiere}"/> Autre(LP, LST,...) </label>
+    </div>
+
+               <label class="label-titre" >Université du diplôme obtenu <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+              
+          <div class="radio-div">
+              <label for="md1"> 
+                <input type="radio" name="universite" id="md1" class="radio" value="UMP" v-model="a"  required th:field="*{universite}"/> 
+                    Mohammed Premier, Oujda
+              </label>
+
+              <label for="t"> 
+                <input type="radio" name="universite" id="t" class="radio" value="UAE" v-model="a"  th:field="*{universite}"/> 
+                    Abdelmalek Essaadi - Tétouan
+              </label>
+
+              <label for="c"> 
+                <input type="radio" name="universite" id="c" class="radio" value="UCA" v-model="a"  th:field="*{universite}"/> 
+                    El Cadi Ayad - Marrakech
+              </label>
+
+              <label for="h1"> 
+                <input type="radio" name="universite" id="h1" class="radio" value="HSS" v-model="a"  th:field="*{universite}"/> 
+                    Hassan 1er - Settat
+              </label>
+
+              <label for="h2"> 
+                <input type="radio" name="universite" id="h2" class="radio" value="HACC" v-model="a"  th:field="*{universite}"/> 
+                    Hassan II - Ain Chock-Casablanca
+              </label>
+
+              <label for="tof"> 
+                <input type="radio" name="universite" id="tof" class="radio" value="ITK" v-model="a"  th:field="*{universite}"/> 
+                    Ibn Tofail - Kenitra
+              </label>
+
+              <label for="zohr"> 
+                <input type="radio" name="universite" id="zohr" class="radio" value="IZA" v-model="a" th:field="*{universite}"/> 
+                    Ibnou Zohr - Agadir
+              </label>
+
+              <label for="v"> 
+                <input type="radio" name="universite" id="v" class="radio" value="UMP5" v-model="a"   th:field="*{universite}"/> 
+                   Mohammed V - Rabat
+              </label>
+              
+              <label for="sm"> 
+                <input type="radio" name="universite" id="sm" class="radio" value="MSM" v-model="a" th:field="*{universite}"/> 
+                    Moulay Ismail - Meknès
+              </label>
+
+              <label for="fes"> 
+                <input type="radio" name="universite" id="fes" class="radio" value="SMBAF" v-model="a"  th:field="*{universite}" /> 
+                    Sidi Mohammed Ben Abdellah - Fès
+              </label>
+
+              <label for="autre-univ"> 
+                <input type="radio" name="universite" id="autre-univ" class="radio" value="Autre" v-model="a"  th:field="*{universite}"/> 
+                    Autre : <input type="text"  value="" v-model="a" >
+              </label>
+
+            </div>
+
+           <label class="label-titre" >Faculte <span>*</span> :  </label> 
+         <label class="une-seule-rep">une seule reponse est Possible </label> 
+
+             <div class="radio-div" >
+                <label for="fscience"> 
+                  <input type="radio" name="faculte" id="fscience" class="radio" value="FSO" v-model="a"   required th:field="*{faculte}"/> 
+                      Faculté des Sciences
+                </label>
+
+                <label for="Fpoly"> 
+                  <input type="radio" name="faculte" id="Fpoly" class="radio" value="FPN" v-model="a" th:field="*{faculte}"/> 
+                      Faculté Pluridisciplinaire
+                </label>
+
+                 <label for="autre-fac"> 
+                <input type="radio" name="faculte" id="autre-fac" class="radio" value="autre" v-model="a"  th:field="*{faculte}"/> 
+                    Autre : <input type="text"  value="" v-model="a" >
+              </label>
+             </div>
+
+   <label for="date_univ" class="label-titre">Année de la première inscription à l'université :<span>*</span> </label>  
+     <input type="date" placeholder="Exemple : 24/01/2022 " id="date_univ"   name="date_univ_etud"  required  th:field="*{date_univ}"  />  
+    
+         
+         
+          
+           <label  class="label-titre">Note de S1  :<span>*</span> </label>
+            <input type="number" min="9" max ="20" placeholder="14,5" value=""  required th:field="*{note1}"/>
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S1 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s1nrm"> 
+                  <input type="radio" name="note1" id="s1nrm" class="radio" value="normal" required th:field="*{s1session}"/> 
+                      Normale
+                </label>
+
+                <label for="s1rat"> 
+                  <input type="radio" name="note1" id="s1rat" class="radio" value="rattrapage"  th:field="*{s1session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+
+                 
+           <label  class="label-titre">Note de S2  :<span>*</span> </label>
+            <input type="number" min="9" max ="20" placeholder="14,5" value="" v-model="a" required   th:field="*{note2}"/>
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S2 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s2nrm"> 
+                  <input type="radio" name="note2" id="s2nrm" class="radio" value="normal" v-model="a" required  th:field="*{s2session}"/> 
+                      Normale
+                </label>
+
+                <label for="s2rat"> 
+                  <input type="radio" name="note2" id="s2rat" class="radio" value="rattrapage" v-model="a"   th:field="*{s2session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+   
+           <label  class="label-titre">Note de S3  :<span>*</span> </label>
+            <input  type="number" min="9" max ="20" placeholder="14,5" value="" v-model="a" required  th:field="*{note3}"/>
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S3 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s3nrm"> 
+                  <input type="radio" name="note3" id="s3nrm" class="radio" value="normal" v-model="a" required th:field="*{s3session}"/> 
+                      Normale
+                </label>
+
+                <label for="s3rat"> 
+                  <input type="radio" name="note3" id="s3rat" class="radio" value="rattrapage" v-model="a" th:field="*{s3session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+   
+           <label  class="label-titre">Note de S4  :<span>*</span> </label>
+            <input  type="number" min="9" max ="20" placeholder="14,5" value="" v-model="a" required th:field="*{note4}" />
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S4 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s4nrm"> 
+                  <input type="radio" name="note4" id="s4nrm" class="radio" value="normal" v-model="a" required th:field="*{s4session}"/> 
+                      Normale
+                </label>
+
+                <label for="s4rat"> 
+                  <input type="radio" name="note4" id="s4rat" class="radio" value="rattrapage" v-model="a"  th:field="*{s4session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+   
+           <label  class="label-titre">Note de S5  :<span>*</span> </label>
+            <input  type="number" min="9" max ="20" placeholder="14,5" value="" v-model="a" required th:field="*{note5}" />
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S5 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s5nrm"> 
+                  <input type="radio" name="note5" id="s5nrm" class="radio" value="normal" v-model="a" required th:field="*{s5session}"/> 
+                      Normale
+                </label>
+
+                <label for="s5rat"> 
+                  <input type="radio" name="note5" id="s5rat" class="radio" value="rattrapage" v-model="a"   th:field="*{s5session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+   
+           <label  class="label-titre">Note de S6  :<span>*</span> </label>
+            <input  type="number" min="9" max ="20" placeholder="14,5" value="" v-model="a" required th:field="*{note6}" />
+              <span> </span>
+              <span> </span>
+        <label class="label-titre" >Session d'obtention de S6 <span>*</span> :  </label>
+            <label class="une-seule-rep">une seule reponse est Possible </label>
+
+             <div class="radio-div" >
+                <label for="s6nrm"> 
+                  <input type="radio" name="note6" id="s6nrm" class="radio" value="normal" v-model="a" required th:field="*{s6session}"/> 
+                      Normale
+                </label>
+
+                <label for="s6rat"> 
+                  <input type="radio" name="note6" id="s6rat" class="radio" value="rattrapage" v-model="a"  th:field="*{s6session}"/> 
+                      Rattrapage
+                </label>
+             </div>
+
+      <label for="date-licence" class="label-titre">Année d'obtention de la Licence:<span>*</span> </label>
+        <input type="date" placeholder="Exemple : 24/01/2022 " id="date-licence" name="date_licence"  required th:field="*{date_licence}"/>
+        
+      <label for="licence" class="label-titre">Licence ou attestation de réussite de la licence :<span>*</span> </label>
+        <input type="file" placeholder="Exemple : 24/01/2022" id="licence"  required  />
+     
+
+       
+        <input type="submit" value="Envoyer" />
+
+        </form>
+
+    </div>
+
+
+    </div>
+
+<style>
+
+
+    form{
+        display: block;
+        max-width: 500px;
+         margin: 60px 320px ;
+        
+        }
+    label{
+        display: block;
+        margin-top: 10px;
+
+    }
+    .label-titre{
+      font-weight: bold;
+    }
+  form input , .textarea {
+        display: block;
+        margin-top: 10px;
+        border: 1px solid black;
+        border-radius: 6px;
+        padding: 4px;
+        width: 100% ;
+    }
+      .radio{
+        display: inline-block;
+      max-width: 5%;
+    }
+    .radio-div{
+        display: inline;
+        margin-top: 2px;
+    }
+    span{
+      color: red ;
+    }
+     .head-div{
+        max-width: 500px;
+         margin: 30px 320px ;
+      
+    }
+    
+
+
+</style>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>DASHMIN - Bootstrap </title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/main.js">
+    <link rel="stylesheet" href="scss/bootstrap.scss">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+	<!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+</head>
+<body>
+	<center><h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASH_ADMIN</h3><br></center>
+<div class="container text-center">
+	
+	<div>
+		<form th:action="@{/logout}" method="post">
+			
+				  Bonjour <b>[[${#request.userPrincipal.principal.fullName}]]</b><br><br>
+			
+			<input class="btn btn-outline-primary" type="submit" value="Se deconnecter" />
+		</form>
+	</div>
+
+	
+	<div>
+		<br>
+		<h3>Selection </h3>
+		
+			<a target = "right" th:href="@{/candidat}" type="button" class="btn btn-outline-primary">Liste des candidature M2i</a><br><br>
+		    <a target = "right" th:href="@{/nombre}" type="button" class="btn btn-outline-secondary">nombre candidature</a><br><br>
+			<a target = "right" th:href="@{/nombre}" type="button" class="btn btn-outline-danger">candidats par filiere</a><br><br>
+			<a target = "right" th:href="@{/nombre}" type="button" class="btn btn-outline-warning">candidats par Universite</a><br><br>
+			<a target = "right" th:href="@{/nombre}" type="button" class="btn btn-outline-info">candidats par etablissement</a><br><br>
+			 <h5 class="card-title">Graphe</h5>				  
+				  <a target = "right" href="#" class="btn btn-primary">Filieres</a>
+				  <a target = "right" href="#" class="btn btn-primary">Sessions</a><br><br>
+				  
+			<h5 class="card-title">Export</h5>				  
+				  <a target = "right"  th:href="@{/users/export/cvs}" class="btn btn-primary">CVS</a>
+				  <a target = "right" th:href="@{/users/export/pdf}" class="btn btn-primary">PDF</a><br><br>
+
+
+			
+			
+	</div>
+	
+	
+</div>
+</body>
+</html>
